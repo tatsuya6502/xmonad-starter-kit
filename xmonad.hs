@@ -8,15 +8,15 @@
 -------------------------------------------------------------------------------
 
 import XMonad
-import XMonad.Actions.WindowGo(runOrRaise)
+import XMonad.Actions.WindowGo (runOrRaise)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Actions.WindowGo
-import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeysP)
+import XMonad.Util.Run         (spawnPipe)
+import XMonad.Util.EZConfig    (additionalKeysP)
 import System.IO
-import Graphics.X11.Xlib     (openDisplay)
-import Graphics.X11.Xinerama (xineramaQueryScreens, xsi_width)
+import Graphics.X11.Xlib       (openDisplay)
+import Graphics.X11.Xinerama   (xineramaQueryScreens, xsi_width)
 
 -------------------------------------------------------------------------------
 -- データ型
