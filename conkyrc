@@ -1,0 +1,25 @@
+# ~/.conkyrc
+
+# Doc: http://conky.sourceforge.net/docs.html
+
+background no
+out_to_x no
+out_to_console yes
+update_interval 3
+total_run_times 0
+use_spacer none
+
+# cpu usage, cpu freq, network, date
+
+# time en_US - ${time %a, %b %d, %I:%M %P}
+# time ja_JP - ${time %m/%d(%a) %I:%M %P}
+
+TEXT
+^fg(\#888888)CPU ${cpu cpu0}%^fg()  \
+^fg(\#666666)${mem}^fg()  \
+${if_empty ${exec ifconfig wlan0 | grep 'inetアドレス'}}\
+^fg(\#bbbbbb)eth0^fg() ^fg(\#d94c3d)${upspeedf eth0}K^fg() ^fg(\#a4bc51)${downspeedf eth0}K^fg()  \
+${else}\
+^fg(\#bbbbbb)${wireless_link_qual_perc wlan0}% ${wireless_essid wlan0}^fg() ^fg(\#d94c3d)${upspeedf wlan0}K^fg() ^fg(\#a4bc51)${downspeedf wlan0}K^fg()  \
+${endif}\
+^fg(\#ffffff)${time %a, %b %d, %I:%M %P}^fg()
